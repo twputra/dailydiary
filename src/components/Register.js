@@ -87,6 +87,7 @@ export default function ModalRegister() {
           }
         }
       } else {
+        alert("Succes Register");
         onClose();
       }
     } catch (error) {
