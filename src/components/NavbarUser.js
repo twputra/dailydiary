@@ -9,19 +9,6 @@ import {
     
     function NavbarUser() {
     const navigate = useNavigate();
-    // const { isOpen, onOpen, onClose } = useDisclosure();
-    // const [opened, setOpened] = useState(false);
-    // const [loginOpened, setLoginOpened] = useState(false);
-    // const { email, photoURL } = user || {};
-    // const token =  localStorage.getItem("token", token)
-    
-    // const handleOpen = () => {
-    // setOpened(true);
-    // };
-    
-    // const handleLoginOpen = () => {
-    // setLoginOpened(true);
-    // };
     
     const handleLogout = () => {
       localStorage.removeItem('token');
@@ -29,10 +16,6 @@ import {
       window.location.reload()
     };
     
-    // const handleClose = () => {
-    // setOpened(false);
-    // setLoginOpened(false);
-    // };
     
     return (
     <Box
