@@ -77,7 +77,7 @@ export default function ModalRegister() {
 
       if (!response.ok) {
         const data = await response.json();
-        alert("Succes Register");
+        
         if (data.errors) {
           if (data.errors.email) {
             setEmailError(true);
@@ -87,11 +87,13 @@ export default function ModalRegister() {
           }
         }
       } else {
+        alert("Succes Register");
         onClose();
       }
     } catch (error) {
       console.log(error);
     }
+    
   };
 
   return (

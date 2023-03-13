@@ -12,6 +12,8 @@ import { CheckIcon } from "@chakra-ui/icons";
 import { FaRegFileArchive } from "react-icons/fa";
 import moment from "moment";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 export default function DiaryCard({
   emoji,
@@ -22,6 +24,8 @@ export default function DiaryCard({
   timestamp,
   title,
 }) {
+
+  const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const [input, setInput] = useState("");
 
@@ -61,6 +65,7 @@ export default function DiaryCard({
         boxShadow="lg"
         borderRadius="28px"
         px={2}
+        onClick={() => navigate(`/detail-diary/${id}`)}
       >
         <Text fontSize="6xl" m="4">
           {emoji}

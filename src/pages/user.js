@@ -3,6 +3,7 @@ import moment from "moment";
 import React, { useEffect, useState } from "react";
 import DiaryCard from "../components/DiaryCard";
 import ModalDiary from "../components/CreateDiary";
+import { useNavigate } from "react-router-dom";
 
 export default function Test() {
   const [diaryData, setDiaryData] = useState([]);
@@ -14,6 +15,7 @@ export default function Test() {
   const PAGE_SIZE = 10;
   const firstIndex = (pageNumber - 1) * PAGE_SIZE + 1;
   const lastIndex = Math.min(pageNumber * PAGE_SIZE, totalPages * PAGE_SIZE);
+  const navigate = useNavigate();
 
   const handleSearch = () => {
     setPageNumber(1);
@@ -108,6 +110,7 @@ export default function Test() {
         </Text>
         {diaryData.map((diary) => (
           <DiaryCard
+          onClick={() => navigate(`/detail-diary/${diary.id}`)}
             diary={diary.title}
             diaryContext={diary.content}
             title={diary.title}
